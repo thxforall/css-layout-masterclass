@@ -1,23 +1,32 @@
 .father {
   display: flex;
   height: 100vh;
-  row-gap: 10px;
-  column-gap: 90px;
   justify-content: center;
+  align-items: flex-start;
   /* flex-direction: row;
   flex-wrap: wrap; */
-  flex-flow: row wrap;
-  align-items: center;
-  align-content: space-evenly;
+  flex-flow: column nowrap;
 }
 
 .box {
+  height: 200px;
+  color: white;
+  font-size: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
+}
+
+.box:first-child {
   background-color: tomato;
-  color: white;
-  font-size: 50px;
+  /* flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 500px; */
+  /*min-width(flex-grow:1, flex-shrink:0),max-width(flex-grow:0,flex-shrink:5)*/
+  flex: 1 0 500px;
+}
+
+.box:last-child {
+  background-color: orange;
+  flex-grow: 1;
 }
