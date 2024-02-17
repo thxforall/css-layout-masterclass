@@ -2,8 +2,46 @@
 @import './variable.scss';
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Noto Serif Hebrew', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: repeating-linear-gradient(
+    90deg,
+    $color-grey-900 3px,
+    $color-grey-700 5px,
+    $color-grey-600 3px
+  );
+}
+
+main {
+  width: 95%;
+  height: 95%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.main__section {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 4fr 1fr;
+
+  .main__section-images {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .main__section-footer {
+  }
+  .main__section-footer-images {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
