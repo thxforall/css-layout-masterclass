@@ -16,32 +16,212 @@ body {
     $color-grey-700 5px,
     $color-grey-600 3px
   );
+  color: $color-grey-800;
+  box-sizing: border-box;
 }
 
 main {
   width: 95%;
   height: 95%;
-  background-color: white;
+  background-color: $color-purple-100;
+  gap: $border-gap;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 0.6fr 3fr;
+  border: $border-gap solid $color-purple-100;
+  border-radius: 4px;
+}
+
+.aside {
+  background-color: $color-grey-50;
+
+  .aside__title,
+  .menu__title {
+    padding: 0 10px;
+  }
+
+  .aside__title {
+    padding-top: 10px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    color: $color-grey-400;
+    text-transform: uppercase;
+  }
+
+  .menu__title {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    .menu__list {
+      border-top: 1px solid $color-grey-600;
+      padding: 8px;
+      font-weight: 300;
+
+      &:first-child {
+        background-color: $color-grey-100;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $color-grey-600;
+      }
+    }
+  }
+
+  .aside__info {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 14px;
+
+    h3 {
+      font-weight: 600;
+    }
+
+    .menu__contact,
+    .menu__personal,
+    .menu__career {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
 }
 
 .main__section {
   display: grid;
+  background-color: $color-grey-50;
   grid-template-columns: 1fr 2fr;
   grid-template-rows: 4fr 1fr;
 
+  .main__section-info {
+    padding: 10px;
+
+    .section-info-home {
+      margin-bottom: 30px;
+      font-size: 12px;
+      color: $color-grey-400;
+      text-transform: uppercase;
+    }
+
+    .section-info-title {
+      width: 45%;
+      font-size: 50px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .section-info-paragraph {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 23px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .image {
+    background-size: cover;
+  }
+
   .main__section-images {
     display: grid;
+    background-color: $color-purple-100;
+    gap: $border-gap;
+    border-left: $border-gap solid $color-purple-100;
+    border-bottom: $border-gap solid $color-purple-100;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
+
+    .image:first-child {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 4;
+      background-image: url('/images/kobe.jpg');
+      background-position: 10% 20%;
+    }
+
+    .image:nth-child(2) {
+      grid-column: 4 / span 3;
+      grid-row: 1 / span 2;
+      background-image: url('/images/kobe_1.jpg');
+      background-position: center;
+    }
+
+    .image:nth-child(3) {
+      grid-column: 4 / span 2;
+      grid-row: 3 / span 1;
+      background-image: url('/images/kobe_2.jpg');
+    }
+
+    .image:nth-child(4) {
+      grid-column: 6 / span 1;
+      grid-row: 3 / span 1;
+      background-image: url('/images/kobe_3.jpg');
+    }
+
+    .image:nth-child(5) {
+      grid-column: 4 / span 1;
+      grid-row: 4 / span 1;
+      background-image: url('/images/kobe_4.jpg');
+      background-size: cover;
+    }
+
+    .image:last-child {
+      grid-column: 5 / span 2;
+      grid-row: 4 / span 1;
+      background-image: url('/images/kobe_5.jpg');
+    }
   }
 
   .main__section-footer {
+    padding: 10px;
+    border-top: $border-gap solid $color-purple-100;
+
+    .main__section-footer-career {
+      padding-top: 10px;
+      margin-bottom: 30px;
+      font-size: 12px;
+      color: $color-grey-400;
+      text-transform: uppercase;
+    }
+    .main__section-footer-title {
+      font-size: 40px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
   }
+
   .main__section-footer-images {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    gap: $border-gap;
+    background-color: $color-purple-200;
+
+    .image:first-child {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 2;
+      background-image: url('/images/kobe_8.jpg');
+      background-position: center;
+    }
+
+    .image:nth-child(2) {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+      background-image: url('/images/24.jpg');
+      background-position: center;
+    }
+    .image:nth-child(3) {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 2;
+      background-image: url('/images/kobe_6.jpg');
+    }
+    .image:nth-child(4) {
+      grid-column: 3 / -1;
+      grid-row: 1 / span 2;
+      background-image: url('/images/kobe_7.jpg');
+    }
   }
 }
